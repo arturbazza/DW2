@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/exercicio2.1.js"></script>
+    <script src="js/exercicio2.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <title>Tarefas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tarefas não concluídas</h1>
+        <ul id="listaTarefas"></ul>
+      </div>
+      <div class="container">
+        <h1>Tarefas concluídas</h1>
+        <ul id="listaTarefasConcluidas"></ul>
+      </div>
+    <script>
+    const tarefas = [
+        {
+        titulo: 'Passear com o cachorro',
+        concluida: false,
+        dias: 10,
+        },
+        {
+        titulo: 'Comprar leite',
+        concluida: true,
+        dias: 5,
+        },
+        {
+        titulo: 'Buscar filho na escola',
+        concluida: false,
+        dias: 1,
+        },
+        {
+        titulo: 'Estudar',
+        concluida: true,
+        dias: 10,
+        },
+        {
+        titulo: 'Pagar a luz',
+        concluida: false,
+        dias: 5,
+        },
+        {
+        titulo: 'Lavar louça',
+        concluida: false,
+        dias: 60,
+        }
+        
+    ];
+    
+    function mostrarTarefasNaoConcluidas(tarefas) {
+        const listaTarefas = document.getElementById('listaTarefas');
+    
+        tarefas.forEach(tarefa => {
+        if (!tarefa.concluida) {
+            const li = document.createElement('li');
+            li.textContent = tarefa.titulo;
+            listaTarefas.appendChild(li);
+        }
+        });
+    }
+
+    mostrarTarefasNaoConcluidas(tarefas);
+
+ function mostrarTarefasConcluidas(tarefas) {
+        const listaTarefas = document.getElementById('listaTarefasConcluidas');
+    
+        tarefas.forEach(tarefa => {
+        if (tarefa.concluida) {
+            const li = document.createElement('li');
+            li.textContent = tarefa.titulo;
+            listaTarefas.appendChild(li);
+        }
+        });
+    }
+    mostrarTarefasConcluidas(tarefas);
+
+</script>
+</body>
+</html>

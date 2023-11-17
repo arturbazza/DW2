@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/exercicio1.1.js"></script>
+  <script src="js/exercicio1.2.js"></script>
+  <script src="js/exercicio1.3.js"></script>
+  <script src="js/exercicio1.4.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <title>Filmes Lançados Antes de 2000</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Filmes Lançados Antes de 2000</h1>
+    <ul id="filmesList">
+    </ul>
+  </div>
+   <script>
+   const filmes = [
+  {
+    "nome": "O Labirinto do Fauno",
+    "lancamento": 2006,
+    "diretores": ["Guillermo del Toro"],
+    "generos": ["Fantasia"]
+  },
+  {
+    "nome": "As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",
+    "lancamento": 2005,
+    "diretores": ["Andrew Adamson"],
+    "generos": ["Fantasia", "Aventura"]
+  },
+  {
+    "nome": "Indiana Jones e os Caçadores da Arca Perdida",
+    "lancamento": 1981,
+    "diretores": ["Steven Spielberg"],
+    "generos": ["Aventura"]
+  },
+  {
+    "nome": "Jurassic Park: Parque dos Dinossauros",
+    "lancamento": 1993,
+    "diretores": ["Steven Spielberg"],
+    "generos": ["Aventura"]
+  },
+  {
+    "nome": "Mad Max: Estrada da Fúria",
+    "lancamento": 2015,
+    "diretores": ["George Miller"],
+    "generos": ["Ação"]
+  },
+  {
+    "nome": "Duro de Matar",
+    "lancamento": 1988,
+    "diretores": ["John McTiernan"],
+    "generos": ["Ação"]
+  },
+  {
+    "nome": "Blade Runner: O Caçador de Androides",
+    "lancamento": 1982,
+    "diretores": ["Ridley Scott"],
+    "generos": ["Ficção Científica"]
+  },
+  {
+    "nome": "Interstellar",
+    "lancamento": 2014,
+    "diretores": ["Christopher Nolan"],
+    "generos": ["Ficção Científica"]
+  },
+  {
+    "nome": "O Senhor do Aneis: A Sociedade do Anel",
+    "lancamento": 2002,
+    "diretores": ["Peter Jackson"],
+    "generos": ["Fantasia", "Aventura"]
+  },
+  {
+    "nome": "Harry Potter e a Pedra Filosofal",
+    "lancamento": 2001,
+    "diretores": ["Chris Columbus"],
+    "generos": ["Fantasia"],
+  },
+  {
+    "nome": "Matrix",
+    "lancamento": 1999,
+    "diretores": ["Lana Wachowski", "Lilly Wachowski"],
+    "generos": ["Ação", "Ficção Cientifica"]
+  }
+]
+
+    function exibirFilmesAntesDe2000() {
+      const filmesList = document.getElementById("filmesList");
+      filmesList.innerHTML = "";
+
+      filmes.forEach(filme => {
+        if (filme.lancamento < 2000) {
+          const li = document.createElement("li");
+          li.classList.add("filme-item"); 
+
+          const titulo = document.createElement("div");
+          titulo.textContent = `Título: ${filme.nome} (${filme.lancamento})`;
+          titulo.classList.add("filme-titulo");
+
+          const genero = document.createElement("div");
+          genero.textContent = `Gênero: ${filme.generos.join(", ")}`;
+          genero.classList.add("filme-genero");
+
+          li.appendChild(titulo);
+          li.appendChild(genero);
+
+          filmesList.appendChild(li);
+        }
+      });
+    }
+
+    exibirFilmesAntesDe2000();
+
+  </script>
+</body>
+</html>
+

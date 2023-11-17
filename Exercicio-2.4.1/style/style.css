@@ -1,0 +1,13 @@
+img {
+    clip-path: circle();
+    height: 200px;
+  }
+
+  .titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center; 
+  }
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }

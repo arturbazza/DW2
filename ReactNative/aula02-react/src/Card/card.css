@@ -1,0 +1,25 @@
+.card {
+    .titulo {
+        display: flex;
+        align-items: center;
+        gap:  5px;
+    }
+    & svg {
+        height: 30px;
+      
+    }    
+    & img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .gostei {
+        fill: red;
+    }
+
+    & button {
+        background-color: transparent;
+        
+        border: none;
+    }
+}
