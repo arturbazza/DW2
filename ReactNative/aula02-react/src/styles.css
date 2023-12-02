@@ -1,0 +1,19 @@
+.container {
+    width: 600px;
+    border-radius: 10px;
+    background-color: bisque;
+    height: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  
+    & img {
+      clip-path: circle();
+    }
+  
+    .titulo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+  
