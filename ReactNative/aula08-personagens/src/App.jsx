@@ -17,12 +17,13 @@ const Personagens = ({ familia }) => {
 
   return (
     <div>
-      <h3>Personagens de Resident Evil ({familia})</h3>
-      <ul>
+      <h2>Personagens de Resident Evil</h2>
+      <span>Filtro "família": <b>{familia}</b></span>
+      <span>
         {filtrarPorFamilia.map(personagem => (
-          <li key={personagem}>{personagem}</li>
+          <p key={personagem}> - {personagem}</p>
         ))}
-      </ul>
+      </span>
     </div>
   )
 }
