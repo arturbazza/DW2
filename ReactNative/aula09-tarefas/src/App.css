@@ -80,6 +80,7 @@ body {
 
 button {
   cursor: pointer;
+  margin: 10px;
   position: relative;
 }
 
@@ -92,21 +93,18 @@ button::before {
 
 button[type="submit"]::before {
   content: "✔";
-  margin-right: 5px;
-  border: 1px solid black; /* Borda externa */
-  padding: 3px; /* Espaço interno */
+  margin-right: 1px;
+  padding: 3px;
 }
 
 button.delete::before {
   content: "✖";
-  margin-right: 5px;
-  border: 1px solid black; /* Borda externa */
-  padding: 3px; /* Espaço interno */
+  margin-right: 1px;
+  padding: 3px;
 }
 
 button.concluir::before {
   content: "✓";
-  margin-right: 5px;
-  border: 1px solid black; /* Borda externa */
-  padding: 3px; /* Espaço interno */
+  margin-right: 1px;
+  padding: 3px;
 }
