@@ -16,7 +16,7 @@ const tarefas = [
   },
   {
     titulo: 'Buscar filho na escola',
-    concluida: false,
+    concluida: true,
     dias: 1,
   },
   {
@@ -26,12 +26,12 @@ const tarefas = [
   },
   {
     titulo: 'Pagar a luz',
-    concluida: false,
+    concluida: true,
     dias: 5,
   },
   {
     titulo: 'Lavar louça',
-    concluida: false,
+    concluida: true,
     dias: 60,
   }
 ];
