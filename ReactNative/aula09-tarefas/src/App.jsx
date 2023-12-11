@@ -1,9 +1,12 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 const tarefas = [
+  {
+    titulo: 'Buscar filho na escola',
+    concluida: true,
+    dias: 1,
+  },
   {
     titulo: 'Comprar pirulitu para o professor',
     concluida: false,
@@ -15,19 +18,14 @@ const tarefas = [
     dias: 5,
   },
   {
-    titulo: 'Buscar filho na escola',
+    titulo: 'Pagar a luz',
     concluida: true,
-    dias: 1,
+    dias: 5,
   },
   {
     titulo: 'Estudar',
     concluida: true,
     dias: 10,
-  },
-  {
-    titulo: 'Pagar a luz',
-    concluida: true,
-    dias: 5,
   },
   {
     titulo: 'Lavar louça',
@@ -36,14 +34,27 @@ const tarefas = [
   }
 ];
 
+const ordenarTarefas = (tarefas) => {
+  const tarefasNaoConcluidas = tarefas.filter(tarefa => !tarefa.concluida);
+  const tarefasConcluidas = tarefas.filter(tarefa => tarefa.concluida);
+
+  const tarefasOrdenadas = [
+    ...tarefasNaoConcluidas.sort((a, b) => a.dias - b.dias),
+    ...tarefasConcluidas
+  ];
+
+  return tarefasOrdenadas;
+};
+
 const App = () => {
-  const [tarefasList, setTarefasList] = useState(tarefas);
+  const [tarefasList, setTarefasList] = useState(ordenarTarefas(tarefas));
   const [novaTarefa, setNovaTarefa] = useState('');
+  const [diasTarefa, setDiasTarefa] = useState('');
 
   const handleConcluirTarefa = (index) => {
     const novasTarefas = [...tarefasList];
     novasTarefas[index].concluida = !novasTarefas[index].concluida;
-    setTarefasList(novasTarefas);
+    setTarefasList(ordenarTarefas(novasTarefas));
   };
 
   const handleExcluirTarefa = (index) => {
@@ -54,14 +65,15 @@ const App = () => {
 
   const adicionarTarefa = (e) => {
     e.preventDefault();
-    if (novaTarefa.trim() !== '') {
+    if (novaTarefa.trim() !== '' && diasTarefa.trim() !== '') {
       const novaTarefaObj = {
         titulo: novaTarefa,
         concluida: false,
-        dias: 15,
+        dias: parseInt(diasTarefa),
       };
-      setTarefasList([...tarefasList, novaTarefaObj]);
+      setTarefasList(ordenarTarefas([...tarefasList, novaTarefaObj]));
       setNovaTarefa('');
+      setDiasTarefa('');
     }
   };
 
@@ -75,6 +87,13 @@ const App = () => {
           onChange={(e) => setNovaTarefa(e.target.value)}
           placeholder="Adicionar nova tarefa"
           className="input-text"
+        />
+        <input
+          type="number"
+          value={diasTarefa}
+          onChange={(e) => setDiasTarefa(e.target.value)}
+          placeholder="Dias"
+          className="input-number"
         />
         <button type="submit" className="concluir" title="Adicionar"></button>
       </form>
