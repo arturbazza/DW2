@@ -66,6 +66,7 @@ body {
   padding: 8px;
   border-bottom: 1px solid #ccc;
   transition: background-color 0.3s ease;
+  background-color: #f0bba6;
 }
 
 .lista-tarefas li:hover {
@@ -75,7 +76,8 @@ body {
 .lista-tarefas li.concluida {
   text-decoration: line-through;
   opacity: 0.6;
-  color: #aaa;
+  color: #646464;
+  background-color: #c3eec9;
 }
 
 button {
@@ -108,3 +110,4 @@ button.concluir::before {
   margin-right: 1px;
   padding: 3px;
 }
+
