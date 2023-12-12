@@ -1,37 +1,39 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import './App.css';
 
 const tarefas = [
   {
-    titulo: 'Buscar filho na escola',
+    titulo: 'Buscar sobrinho na escola',
     concluida: true,
     dias: 1,
+    dataCriacao: '10/12/2023',
+  },
+  {
+    titulo: 'Tarefa de DW2',
+    concluida: true,
+    dias: 7,
+    dataCriacao: '07/12/2023',
+  },
+  {
+    titulo: 'Correr',
+    concluida: true,
+    dias: 1,
+    dataCriacao: '09/12/2023',
   },
   {
     titulo: 'Comprar pirulitu para o professor',
     concluida: false,
     dias: 1,
+    dataCriacao: '15/12/2023',
   },
   {
-    titulo: 'Comprar um saco de pirurilu',
+    titulo: 'Comprar um saco de pirulitu',
     concluida: false,
-    dias: 5,
+    dias: 1,
+    dataCriacao: '15/12/2023',
   },
-  {
-    titulo: 'Pagar a luz',
-    concluida: true,
-    dias: 5,
-  },
-  {
-    titulo: 'Estudar',
-    concluida: true,
-    dias: 10,
-  },
-  {
-    titulo: 'Lavar louça',
-    concluida: true,
-    dias: 60,
-  }
 ];
 
 const ordenarTarefas = (tarefas) => {
@@ -44,6 +46,17 @@ const ordenarTarefas = (tarefas) => {
   ];
 
   return tarefasOrdenadas;
+};
+
+const formatarData = () => {
+  const dataAtual = new Date();
+  const dia = String(dataAtual.getDate()).padStart(2, '0');
+  const mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+  const ano = dataAtual.getFullYear();
+  const hora = String(dataAtual.getHours()).padStart(2, '0');
+  const minutos = String(dataAtual.getMinutes()).padStart(2, '0');
+
+  return `${dia}/${mes}/${ano} - ${hora}:${minutos}`;
 };
 
 const App = () => {
@@ -70,6 +83,7 @@ const App = () => {
         titulo: novaTarefa,
         concluida: false,
         dias: parseInt(diasTarefa),
+        dataCriacao: formatarData(),
       };
       setTarefasList(ordenarTarefas([...tarefasList, novaTarefaObj]));
       setNovaTarefa('');
@@ -80,6 +94,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Gerenciador de Tarefas</h1>
+      <p className="data-atual">Data e hora atual: {formatarData()}</p>
       <form onSubmit={adicionarTarefa} className="form">
         <input
           type="text"
@@ -101,6 +116,7 @@ const App = () => {
         {tarefasList.map((tarefa, index) => (
           <li key={index} className={tarefa.concluida ? 'concluida' : ''}>
             <div className="task-info">
+              <span className="data-criacao">{tarefa.dataCriacao}</span>
               <span>{tarefa.titulo}</span>
               <span>{tarefa.dias} dias</span>
             </div>
