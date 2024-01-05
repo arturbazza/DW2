@@ -1,8 +1,31 @@
-# React + Vite
+### Exercício: Listagem Família Resident Evil
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Resolução](https://stackblitz-starters-xjp757.stackblitz.io)
 
-Currently, two official plugins are available:
+Considere o component `Personagens` declarado abaixo. Faça uma alteração na renderização do JSX para que sejam exibidos apenas personagens da família (por exemplo, `Redfield`) parametrizada através do uso das props do React. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```jsx
+
+const Personagens = () => {
+  const personagens = [
+    'Jill Valentine',
+    'Claire Redfield',
+    'Ada Wong',
+    'Chris Redfield',
+    'Leon S. Kennedy',
+    'Albert Wesker',
+  ];
+  return (
+    <div>
+      <h3>Personagens de Resident Evil</h3>
+      <ul>
+        {personagens.map(personagem => (
+          <li>{personagem}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+Procure na documentação sobre [métodos de strings disponíveis](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String) para descobrir qual método pode te ajudar nessa tarefa.
