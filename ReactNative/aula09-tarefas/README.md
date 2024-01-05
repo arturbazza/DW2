@@ -1,8 +1,5 @@
-# React + Vite
+### Exercício: Gerenciamento de Tarefas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Resolução](https://stackblitz.com/edit/stackblitz-starters-qtkyx5?description=A%20create-react-app%20project%20based%20on%20react%20and%20react-dom&file=src%2FApp.js&title=React%20Starter)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Faça um sistema em React que será responsável por gerenciar uma listagem de tarefas pendentes. Você deve fazer uso do `useState` para concluir esse exercício.
