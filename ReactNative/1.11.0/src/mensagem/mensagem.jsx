@@ -1,5 +1,3 @@
-// código do arquivo mensagem.jsx
-
 import React from 'react';
 
 const Mensagem = ({ type, status, content }) => {

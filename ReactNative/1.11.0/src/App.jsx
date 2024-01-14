@@ -1,5 +1,3 @@
-// código do arquivo App.jsx
-
 import React from 'react';
 import Mensagem from './mensagem/mensagem';
 import './mensagem/styles.css';

@@ -1,12 +1,10 @@
-/* código do arquivo styles.css */
-
 :root {
     --cor-mensagem-primaria: #000000;
-    /* Preto para o fundo do bloco */
+
     --cor-mensagem-secundaria: #075e54;
-    /* Verde escuro para os balões de conversa */
+
     --cor-mensagem-terciaria: #25d366;
-    /* Verde claro para o ícone de visualização */
+
     --cor-hover: #8b8b8b78;
 }
 
@@ -16,12 +14,12 @@ body,
     height: 90vh;
     display: flex;
     align-items: flex-end;
-    /* Modificado para alinhar no final da tela */
+
     justify-content: center;
     margin: 20px 0;
-    /* Adicionado margem pequena */
+
     background-color: var(--cor-mensagem-primaria);
-    /* Adicionado o fundo preto */
+
 }
 
 .content {
@@ -32,33 +30,33 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    /* Adicionado para remover margens padrão */
+
 }
 
 .message {
     position: relative;
     background-color: var(--cor-mensagem-secundaria);
-    /* Alterado para verde escuro */
+
     border-radius: 10px;
     margin-bottom: 5px;
     color: white;
     width: fit-content;
     max-width: 70%;
-    /* Adicionado para limitar a largura do bloco */
+
 }
 
 .message.received {
     align-self: flex-start;
-    /* Modificado para o lado esquerdo */
+
     border-top-right-radius: 0;
-    /* Adicionado para cantos arredondados */
+
 }
 
 .message.sent {
     align-self: flex-end;
-    /* Adicionado para o lado direito */
+
     border-top-left-radius: 0;
-    /* Adicionado para cantos arredondados */
+
 }
 
 .message p {
@@ -74,7 +72,7 @@ ul {
 .message .options {
     top: 2px;
     left: 5px;
-    /* Modificado para o lado esquerdo */
+
     visibility: hidden;
     border-radius: 50%;
     width: 20px;
@@ -96,9 +94,9 @@ ul {
 .message .visualized {
     bottom: 2px;
     right: 10px;
-    /* Modificado para o lado direito */
+
     fill: var(--cor-mensagem-terciaria);
-    /* Alterado para verde claro */
+
 }
 
 svg {
