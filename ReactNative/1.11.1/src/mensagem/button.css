@@ -1,0 +1,21 @@
+.button {
+  visibility: hidden;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e5e5e5;
+}
+
+.button svg {
+  width: 16px;
+  height: 16px;
+}
