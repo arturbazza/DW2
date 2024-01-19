@@ -12,7 +12,7 @@
 }
 
 .message:hover .message__options {
-    opacity: 10;
+    opacity: 20;
 }
 
 .message--sent {
@@ -22,7 +22,7 @@
 }
 
 .message--received {
-    background-color: #f5f5f5;
+    background-color: #17d610;
     align-self: flex-start;
 }
 
@@ -34,14 +34,13 @@
     display: flex;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
     position: absolute;
     bottom: 10px;
     right: 10px;
 }
 
 .message__options svg {
-    width: 20px;
-    height: 20px;
-    fill: #888;
+    width: 15px;
+    height: 15px;
+    fill: #00c3ff;
 }
