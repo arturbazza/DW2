@@ -11,8 +11,12 @@
     overflow: hidden;
 }
 
-.message:hover .message__options {
-    opacity: 20;
+.message--received .message__options {
+    opacity: 1;
+}
+
+.message--sent .message__options {
+    opacity: 1;
 }
 
 .message--sent {
@@ -22,7 +26,7 @@
 }
 
 .message--received {
-    background-color: #17d610;
+    background-color: #00a884;
     align-self: flex-start;
 }
 
@@ -43,4 +47,10 @@
     width: 15px;
     height: 15px;
     fill: #00c3ff;
+}
+
+.message--sent .message__options svg {
+    width: 15px;
+    height: 15px;
+    fill: #6e6e6e;
 }

@@ -50,7 +50,8 @@ function App() {
           />
         ))}
         <Button
-          icon={SVG.send}
+          icon={SVG}
+          color="#00a884"
           onClick={() => {
             console.log('Mensagem enviada');
           }}

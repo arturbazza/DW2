@@ -1,23 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import './Message.css';
 import SVG from "../assets/react";
 
 const Message = ({
     message, remetente, visualizado, onClick,
 }) => {
-    const messageClasses = classNames('message', {
-        'message--sent': remetente,
-        'message--received': !remetente,
-        'message--visualized': visualizado,
-    });
+    const iconColor = remetente ? '#00a884' : (visualizado ? '#00a884' : '#f5f5f5');
 
     return (
-        <div className={messageClasses} onClick={onClick}>
+        <div className={`message ${remetente ? 'message--sent' : 'message--received'}`} onClick={onClick}>
             <p>{message}</p>
             <div className="message__options">
-                <SVG name="more-horizontal" />
+                <SVG name="more-horizontal" color={iconColor} />
             </div>
         </div>
     );
