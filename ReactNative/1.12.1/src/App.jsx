@@ -4,7 +4,6 @@ import Message from './components/Message';
 import Button from './components/Button';
 import SVG from "./assets/react.jsx";
 
-
 function App() {
   const [messages, setMessages] = useState([]);
 
@@ -38,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <div className="chat">
+        <h1>Chat Artur</h1>
         {messages.map((message, index) => (
           <Message
             key={index}
