@@ -37,8 +37,15 @@ function App() {
   return (
     <div className="App">
       <div className="chat">
-        <h1>Chat Artur</h1>
-
+        <div>
+          <h1>Chat Artur</h1>
+          <Button
+            icon={SVG}
+            onClick={() => {
+              console.log('Mensagem enviada');
+            }}
+          />
+        </div>
         {messages.map((message, index) => (
           <Message
             key={index}
@@ -56,11 +63,3 @@ function App() {
 }
 
 export default App;
-
-// --> IMPLENETAR
-//  < Button
-//   icon={SVG}
-//   onClick={() => {
-//     console.log('Mensagem enviada');
-//   }}
-// />
