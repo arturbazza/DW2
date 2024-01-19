@@ -52,5 +52,5 @@
 .message--sent .message__options svg {
     width: 15px;
     height: 15px;
-    fill: #6e6e6e;
+    fill: grey;
 }

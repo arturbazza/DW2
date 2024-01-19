@@ -41,11 +41,13 @@ body,
 }
 
 .header button svg {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+  fill: white;
 }
 
 .chat {
+  position: relative;
   width: 400px;
   border: 1px solid gray;
   border-radius: 5px;
@@ -53,6 +55,37 @@ body,
   padding: 10px;
   background-color: rgb(29, 28, 28);
   color: white;
+}
+
+h1 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: var(--cor-hover);
+}
+
+button svg {
+  width: 15px;
+  height: 15px;
+  fill: white;
 }
 
 ul {
