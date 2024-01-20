@@ -1,46 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button';
 import Message from './Message';
 import './App.css';
 
 const App = () => {
-  const [loading, setLoading] = React.useState(true);
-  const [mensagens, setMensagens] = React.useState([
-    {
-        mensagem: 'Oi...',
-        visualizado: true,
-        remetente: false,
-    },
-    {
-        mensagem: 'Tu não me ama mais?',
-        visualizado: true,
-        remetente: false,
-    },
-    {
-        mensagem: 'Oi, boa tarde.',
-        visualizado: false,
-        remetente: true,
-    },
-    {
-        mensagem: 'Quem é você mesmo?',
-        visualizado: false,
-        remetente: true,
-    },
-    {
-        mensagem: 'Eu não lembro...',
-        visualizado: false,
-        remetente: true,
-    },
-]);
+  const [loading, setLoading] = useState(true);
+  const [mensagens, setMensagens] = useState([]);
+
+  useEffect(() => {
+
+    const fetchMensagens = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/mensagens');
+        const data = await response.json();
+        setMensagens(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Erro ao buscar mensagens:', error);
+      }
+    };
+
+    fetchMensagens();
+  }, []);
 
   return (
     <div className="chat">
       <div className="header">
         <Button />
-        <h3>Meu Chat</h3>
+        <h3>Chat Artur</h3>
       </div>
       <div className="content">
-
         {loading === true && (
           <div>
             <div className='skeleton-loader'></div>
@@ -48,29 +37,21 @@ const App = () => {
             <div className='skeleton-loader'></div>
           </div>
         )}
-        {
-          loading === false && (
-            <ul>
-              {
-                mensagens.map(mensagem => (
-                  <Mensagem
-                    mensagem={mensagem.mensagem}
-                    visualizado={mensagem.visualizado}
-                    remetente={mensagem.remetente}
-                  />
-                )
-                )
-              }
-
-            </ul>
-          )
-        }
-
+        {loading === false && (
+          <ul>
+            {mensagens.map((mensagem, index) => (
+              <Message
+                key={index}
+                text={mensagem.mensagem}
+                status={mensagem.visualizado ? 'lido' : 'nlido'}
+                sender={mensagem.remetente ? 'eu' : ''}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
 };
 
 export default App;
-
-
