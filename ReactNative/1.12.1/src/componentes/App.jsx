@@ -8,7 +8,6 @@ const App = () => {
   const [mensagens, setMensagens] = useState([]);
 
   useEffect(() => {
-    // Função para buscar mensagens da API
     const fetchMensagens = async () => {
       try {
         const response = await fetch('http://localhost:8080');
