@@ -10,7 +10,7 @@ const mensagens = [
     { mensagem: 'Eu não lembro...', visualizado: false, remetente: true },
 ];
 
-app.get('/mensagens', (req, res) => {
+app.get('/', (req, res) => {
     res.json(mensagens);
 });
 

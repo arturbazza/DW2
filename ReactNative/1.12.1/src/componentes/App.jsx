@@ -11,7 +11,7 @@ const App = () => {
 
     const fetchMensagens = async () => {
       try {
-        const response = await fetch('http://localhost:8080/mensagens');
+        const response = await fetch('http://localhost:8080/');
         const data = await response.json();
         setMensagens(data);
         setLoading(false);
