@@ -8,10 +8,10 @@ const App = () => {
   const [mensagens, setMensagens] = useState([]);
 
   useEffect(() => {
-
+    // Função para buscar mensagens da API
     const fetchMensagens = async () => {
       try {
-        const response = await fetch('http://localhost:8080/');
+        const response = await fetch('http://localhost:8080');
         const data = await response.json();
         setMensagens(data);
         setLoading(false);
@@ -27,7 +27,7 @@ const App = () => {
     <div className="chat">
       <div className="header">
         <Button />
-        <h3>Chat Artur</h3>
+        <h3>Meu Chat</h3>
       </div>
       <div className="content">
         {loading === true && (

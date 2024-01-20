@@ -1,19 +1,42 @@
 const express = require('express');
-const app = express();
-const port = 8080;
+const cors = require('cors');
 
-const mensagens = [
-    { mensagem: 'Oieee...', visualizado: true, remetente: false },
-    { mensagem: 'Tu não me ama mais?', visualizado: true, remetente: false },
-    { mensagem: 'Oi, boa tarde.', visualizado: false, remetente: true },
-    { mensagem: 'Quem é você mesmo?', visualizado: false, remetente: true },
-    { mensagem: 'Eu não lembro...', visualizado: false, remetente: true },
-];
+const app = express();
+
+app.use(cors());
 
 app.get('/', (req, res) => {
-    res.json(mensagens);
+    setTimeout(() => {
+        res.json([
+            {
+                mensagem: 'Oi...',
+                visualizado: true,
+                remetente: false,
+            },
+            {
+                mensagem: 'Tu não me ama mais?',
+                visualizado: true,
+                remetente: false,
+            },
+            {
+                mensagem: 'Oi, boa tarde.',
+                visualizado: false,
+                remetente: true,
+            },
+            {
+                mensagem: 'Quem é você mesmo?',
+                visualizado: false,
+                remetente: true,
+            },
+            {
+                mensagem: 'Eu não lembro...',
+                visualizado: false,
+                remetente: true,
+            },
+        ]);
+    }, 1000);
 });
 
-app.listen(port, () => {
-    console.log(`Servidor está rodando em http://localhost:${port}`);
+app.listen(8080, () => {
+    console.log('Servidor rodando');
 });
